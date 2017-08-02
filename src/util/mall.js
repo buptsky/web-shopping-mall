@@ -13,9 +13,9 @@ var _mall = {
       success: function (res) {
         if (res.status === 0) { // 请求成功
           typeof param.success === 'function' && param.success(res.data, res.msg);
-        } else if (res.status === 0) { // 没有登录状态
+        } else if (res.status === 10) { // 没有登录状态
           self.doLogin(); // 跳转到登录页
-        } else if (res.status === 0) { // 请求数据错误
+        } else if (res.status === 1) { // 请求数据错误
           typeof param.error === 'function' && param.error(res.msg);
         }
       },
@@ -57,7 +57,7 @@ var _mall = {
     }
   },
   doLogin: function () { // 跳转登录
-    window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
+    window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
   },
   goHome: function () { // 返回主页
     window.location.href = './nav.html';
