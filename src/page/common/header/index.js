@@ -5,6 +5,7 @@ var _mall = require('util/mall.js');
 var header = {
   init: function () {
     this.bindEvent();
+    this.onLoad();
   },
   onLoad: function () {
     var keyword = _mall.getUrlParam('keyword');
