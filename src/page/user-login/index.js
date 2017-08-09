@@ -39,7 +39,7 @@ var page = {
     if (validateResult.status) {
       // 提交
       _user.login(formData, function(res){
-        window.location.href = _mall.getUrlParam('redirect') || './index.html';
+        window.location.href = _mall.getUrlParam('redirect') || './index.string';
       }, function(errMsg){
         formError.show(errMsg);
       });
